@@ -9,13 +9,18 @@
 
     <form action="register.aspx">
         Email Address <br/>
-        <input type="email" name="email" required />
+        <input type="email" name="email"  autocomplete="off" required />
         <p></p>
         Password <br/>
-        <input type="password" name="pwd" required />
+        <input type="password" name="pwd" required minlength="6"
+               title="Min 6 char with A-Z, a-z, 0-9 and @ and #"/>
         <p></p>
         Re-enter Password <br />
-        <input type="password" name="pwd2" required />
+        <input type="password" name="pwd2" required placeholder="Password again"/>
+        <p></p>
+        Mobile Number <br/>
+        <input type="text" title="10 Digit Mobile Number"
+               maxlength="10" pattern="[0-9]{10}" />
         <p></p>
         Occupation <br/>
         <select>
@@ -25,6 +30,14 @@
             <option value="o">Other</option>
         </select>
         <p></p>
+        Gender 
+        <input type="radio" name="gender" value="m" checked>Male 
+        <input type="radio" name="gender" value="f">Female
+        <p></p>
+        Contact through : 
+        <input type="checkbox" name="bymodile">Mobile
+        <input type="checkbox" name="byemail" checked>Email
+         <p></p>
         <input type="submit" value="Submit" />
     </form>
 
