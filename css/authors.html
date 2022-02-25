@@ -1,0 +1,65 @@
+<html>
+
+<head>
+    <style>
+        .photo_container {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .author {
+            background-color: lightgray;
+            height: 400px;
+            width : 30%;
+            text-align:  center;
+        }
+
+        .photo {
+            width: 90%;
+            height: 70%;
+        }
+
+        .title {
+            font-size: 2em;
+            color: darkgreen;
+            text-align: center;
+        }
+
+        .description {
+            font-family: 'verdana';
+            font-size: 1.5em;
+            color:red;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Authors</h1>
+      
+    <div class="photo_container">
+        <div class="author">
+            <div class="title">Anders </div>
+            <img class="photo" src="../photos/anders.jpg" />
+            <p class="description">
+                Creator of Delphi, C# and TypeScript
+            </p>
+        </div>
+        <div class="author">
+            <div class="title">John Resig</div>
+            <img class="photo" src="../photos/john_resig.jpg" />
+            <p class="description">
+                Creator of jQuery
+            </p>
+        </div>
+
+        <div class="author">
+            <div class="title">James Gosling</div>
+            <img class="photo" src="../photos/james.jpg" />
+            <p class="description">
+                Creator of Java
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>

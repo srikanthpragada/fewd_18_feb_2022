@@ -1,66 +1,92 @@
 <html>
-  <head>
-      <link rel="stylesheet" href="styles.css" />
-      <style>
-          h2 {
-              color: red;
-              font-family: 'arial';
-          }
-          h1 {
-              color:white;
-              background-color:gray;
-          }
-          div {
-              color: yellow;
-          }
-          /* by id */
-          #d2 {
-              color : green;
-          }
-          /* Multiple elements */
-          h1, h2  {
-              border: 1px solid;
-          }
-          /* nested element */
-          div a  {
-              color: red;
-          }
-          /* Divs with attribute title */
-          div[title] {
-              color : rgb(200,100,200);
-          }
 
-          a[target='_blank'] {
-               font-size:1.5em;
-          }
-          a:hover {
-              color : purple;
-          }
+<head>
+   
+    <style>
+        /* all h2 elements */
+        h2 {
+            color: red;
+            font-family: 'arial';
+        }
 
-          /* CSS class */
-          .banner  {
-              color : blue;
-              font-size : 2em;
-              letter-spacing:2px;
-          }
+        /* by id */
+        #d2 {
+            color: green;
+        }
 
-      </style>
-  </head>
-  <body>
-      <h1 style="font-family: 'calibri';">Srikanth Technologies</h1>
-      <h2 style="letter-spacing:5pt;font-weight:normal;">Where Quality Matters</h2>
-      <h2>Srikanth Pragada</h2>
-      <h1>Simple Heading</h1>
+        /* Multiple elements */
+        h1,
+        h2 {
+            letter-spacing: 2pt;
+        }
 
-      <div title="First">First DIV
-          <a href="">Inside DIV 1</a>
-      </div>
-      <div id="d2"  >Second DIV</div>
-      <p></p>
-      <a href="google.com" target="_blank">Google</a>
+        /* Divs with attribute title */
+        div[title] {
+            color: rgb(200, 100, 200);
+        }
 
-      <div class="banner">Banner</div>
-      <span class="banner">Span Banner</span>
-  </body>
+        /* Attribute selector */
+        a[target='_blank'] {
+            font-size: 1.5em;
+        }
 
-</html> 
+        /* Pseudo class */
+        a:hover {
+            color: purple;
+        }
+
+
+        /* Pseudo element */
+        li::marker {
+            color: red;
+        }
+
+        /* Combinator */
+        div+span {
+            color: maroon;
+        }
+
+        div>a {
+            color: black;
+        }
+
+        div pre  {
+            font-size:1.5em;
+        }
+        /* CSS class */
+        .banner {
+            color: blue;
+            font-size: 2em;
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Srikanth Technologies</h1>
+    <h2>Where Quality Matters</h2>
+    <h2>Srikanth Pragada</h2>
+    <h1>Simple Heading</h1>
+
+    <div title="First">
+        First DIV
+        <br />
+        <a href="">Anchor Inside DIV</a>
+        <p>
+            Paragraph One <pre>DIV -> P -> PRE </pre>
+
+        </p>
+    </div>
+    <div id="d2">Second DIV</div>
+    <p></p>
+    <a href="google.com" target="_blank">Google</a>
+
+    <div class="banner">Banner</div>
+    <span>Span Banner</span>
+    <ul>
+        <li>One</li>
+        <li>Two</li>
+    </ul>
+</body>
+
+</html>
