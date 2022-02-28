@@ -1,0 +1,24 @@
+<html>
+<head>
+    <script>
+        function showDateTime() {
+            // get access to H2 
+            var h2Element = document.getElementById("datetime")
+            console.log(h2Element)
+            // Create object of Date to get current date and time 
+            var now = new Date()
+            // Place string form of date in H2
+            h2Element.innerHTML = now.toString() 
+        }
+    </script>
+</head>
+
+<body>
+    <h3>Date and Time</h3>
+    <button onclick="showDateTime()">Show Date Time</button>
+    <h2 id="datetime"></h2>
+</body>
+
+
+
+</html>
