@@ -1,0 +1,34 @@
+<html>
+
+<head>
+    <script>
+        let names = [];  // Empty array 
+
+        function addName() {
+            let fullname = document.getElementById('fullname');
+            names.push(fullname.value)  // add name to array 
+
+            // Display names 
+            showNames();
+        }
+        function showNames() {
+            let output = "";
+
+            for (let n of names) {
+                output += `<li>${n}</li>`
+            }
+
+            document.getElementById('names').innerHTML = output;
+        }
+    </script>
+</head>
+
+<body>
+    <h3>Names</h3>
+    Name : <input type="text" id="fullname" />
+    <br />
+    <button onclick="addName()">Go</button>
+    <ul id="names" style="color:blue">
+    </ul>
+</body>
+</html>
