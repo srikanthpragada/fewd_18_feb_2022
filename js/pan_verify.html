@@ -1,0 +1,24 @@
+<html>
+
+<head>
+    <script>
+        "use strict";
+        function verifyPan() {
+            var pan = document.getElementById('pan').value;
+            var match = /^[A-Z]{5}\d{4}[A-Z]$/.test(pan)
+            if (match)
+                alert("Valid PAN")
+            else
+                alert("Invalid PAN")
+        }
+    </script>
+</head>
+
+<body>
+    <h3>Pan Verify</h3>
+    Name : <input type="text" id="pan" />
+    <p></p>
+    <button onclick="verifyPan()">Verify</button>
+</body>
+
+</html>
