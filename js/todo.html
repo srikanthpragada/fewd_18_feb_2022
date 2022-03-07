@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+
+</head>
+
+<body>
+    <h1>Todo Manager</h1>
+    Todo <input type="text" style="width:80%" id="todoText" />
+    <button onclick="addTodo()">Add</button>
+
+    <div id="todoItems">
+        <h4>Current Todo List</h4>
+        <ul id="todoList">
+
+        </ul>
+    </div>
+    <div id="errorMessage"></div>
+
+
+    <script>
+        function addTodo() {
+            todoText = document.getElementById("todoText").value;
+            var items = localStorage.getItem("todos")
+
+            if (items == null) {
+                localStorage.setItem("todos", todoText)
+            }
+            else {
+                localStorage.setItem("todos", items + "**" + todoText)
+            }
+            showTodoList();
+        }
+
+        function showTodoList() {
+            todoList = document.getElementById("todoList");
+
+            // display existing todos 
+            var items = localStorage.getItem("todos")
+            if (items != null) {
+                var todoItems = items.split("**")
+                let output = "";
+                for (let todo of todoItems) {
+                    output += "<li>" + todo + "</li>";
+                }
+
+                todoList.innerHTML = output;
+            }
+            else {
+                  // hide todoItems 
+                  // display error message in errorMessage 
+            }
+        }
+
+        showTodoList();
+
+    </script>
+
+
+</body>
+
+</html>

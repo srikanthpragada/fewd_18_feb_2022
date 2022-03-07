@@ -1,4 +1,4 @@
 
-import { isEven } from './math_module.js'
-
-console.log(isEven(10))
+var mm  = require("./math_module")
+ 
+console.log(mm.isEven(10))
