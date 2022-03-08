@@ -11,7 +11,6 @@
 
         function startTimer() {
             intervalId = setInterval(showTime, 1000);
-
         }
 
         function stopTimer() {
@@ -23,16 +22,25 @@
             document.getElementById("time").innerHTML = date.toLocaleTimeString();
         }
 
+        function process(e) {
+            var value = e.value;
+            if (value === "Start")
+            {
+                startTimer();
+                e.value = "Stop";
+            }
+            else {
+                stopTimer();
+                e.value = "Start";
+            }
+        }
 
     </script>
 </head>
 
 <body>
     <h1 id="time"></h1>
-    <button onclick="startTimer()">Start Clock</button>
-    <button onclick="stopTimer()">Stop Clock</button>
-
-
+    <input type="button" onclick="process(this)" value="Start" />
 </body>
 
 </html>

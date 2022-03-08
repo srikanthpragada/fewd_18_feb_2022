@@ -21,26 +21,28 @@
     </div>
     <h3 id="errorMessage"></h3>
 
-
     <script>
         function addTodo() {
             todoText = document.getElementById("todoText").value;
             var items = localStorage.getItem("todos")
 
             if (items == null || items == "") {
-                localStorage.setItem("todos", todoText)
+                var todos = [todoText]
+                localStorage.setItem("todos", JSON.stringify(todos))
             }
             else {
-                localStorage.setItem("todos", items + "**" + todoText)
+                todos = JSON.parse(items)
+                todos.push(todoText)
+                localStorage.setItem("todos", JSON.stringify(todos))
             }
             showTodoList();
         }
 
         function deleteItem(idx) {
             var items = localStorage.getItem("todos")
-            var todoItems = items.split("**")
+            var todoItems = JSON.parse(items)
             todoItems.splice(idx, 1)
-            localStorage.setItem("todos", todoItems.join("**"))
+            localStorage.setItem("todos", JSON.stringify(todoItems))
             showTodoList();
 
         }
@@ -52,18 +54,19 @@
 
             // display existing todos 
             var items = localStorage.getItem("todos")
-            if (items != null && items !== "") {
+            if(items != null)
+               items = JSON.parse(items)
+
+            if (items != null && items.length > 0) {
                 // display todos 
 
                 todoItems.style.display = 'block';
                 var todoList = document.getElementById("todoList");
-                var todoItems = items.split("**")
                 var output = "";
-                for (let idx in todoItems) {
-                    output += "<li>" + todoItems[idx] +
+                for (let idx in items) {
+                    output += "<li>" + items[idx] +
                         "&nbsp;<button onclick='deleteItem(" + idx + ")'>Delete</button></li>";
                 }
-
                 todoList.innerHTML = output;
             }
             else {
