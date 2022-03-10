@@ -12,7 +12,7 @@
         }
         );
 
-        $("#text").on("blur", function () {
+        $("#text").blur(function () {
             console.log(this);  // DOM object 
             var jtext = $(this) // jQuery Object  
 
@@ -25,7 +25,7 @@
 </script>
 
 <body>
-    <h2>KeyEvents Demo</h2>
+    <h2>Handling KeyEvents Demo</h2>
     <input id="text" type="text" autocomplete="off" />
     <p></p>
     <input type="text" autocomplete="off" />
