@@ -1,0 +1,65 @@
+<html>
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"> </script>
+    <style>
+        #details {
+            font-size: 2em;
+            margin-right: 10px;
+            background-color: lightgray;
+        }
+    </style>
+</head>
+<script>
+
+    $( () => $("#repos").hide())
+
+    
+    function getRepos() {
+        $("#repos").hide() 
+        const URL = "https://api.github.com/users/"
+        $.ajax
+            (
+                {
+                    url: URL + $("#uname").val() + "/repos",
+                    type: 'get',
+                    success: showRepos,
+                    error: (result) => {
+                        alert("Sorry! Could not get details!")
+                    }
+                }
+            );
+    }
+
+    function showRepos(repos) {
+        $("#repoList").html("")  // Empty table body
+        $.each(repos,
+            function (idx, repo) {
+                $("#repoList").append(`<tr><td>${repo.name}</td><td>${repo.description}</td></tr>`)
+            }
+        );
+
+        $("#repos").show()    
+    }
+
+</script
+<body>
+    Username : <input type="text" value="gvanrossum" id="uname" />
+    <p></p>
+    <button onclick="getRepos()">Get Repos</button>
+    
+    <p></p>   
+    
+    <table  id="repos" border="2" cellpadding="5px">
+        <thead>
+            <tr><th>Name</th>
+                <th>Description</th>
+            </tr>
+                
+        </thead>
+        <tbody id="repoList">
+
+        </tbody>
+    </table>
+</body>
+</html>
