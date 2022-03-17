@@ -1,9 +1,19 @@
-export default function Course(props) {
+import React from "react";
+
+function CourseDetails(props) {
   return (
-    <div>
+    <>
       <h1>{props.course.title}</h1>
       <h3>{props.course.duration}</h3>
       <h3>{props.course.fee}</h3>
+    </>
+  );
+}
+
+export default function Course(props) {
+  return (
+    <div>
+      <CourseDetails course={props.course} />
       <p></p>
       <h2>Topics</h2>
       Here are the topics discussed in this course:
