@@ -1,20 +1,18 @@
 import {useState} from 'react'
 
 export default function Discount() {
-    var [price, setPrice] = useState(1000)
-    var discount = "";
- 
+    var [price, setPrice] = useState(0)
+    var [discount, setDiscount] = useState(0)
+  
     function calculate() {
         if (price < 10000)
-            discount = price * 0.1
+            setDiscount(price * 0.1)
         else
-            discount = price * 0.2
-        
-        console.log(discount)
+            setDiscount(price * 0.2)
     }
 
     function changePrice(event) {
-        console.log(event)
+        //console.log(event)
         setPrice(event.target.value)
     }
 
@@ -27,3 +25,4 @@ export default function Discount() {
         </>
     );
 }
+ 

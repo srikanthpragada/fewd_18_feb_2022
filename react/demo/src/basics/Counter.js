@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 export default function Counter() {
-  var [value, setValue] = useState(1);
+  var [value, setValue] = useState(1);  // Hook
 
   function increment() {
     setValue(value + 1);
