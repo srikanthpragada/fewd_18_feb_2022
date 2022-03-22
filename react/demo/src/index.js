@@ -1,12 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Contacts from "./basics/Contacts";
+import CountryInfo from "./ajax/CountryInfo";
 import "./index.css";
  
 
 ReactDOM.render( 
   <React.StrictMode>
-     <Contacts />
+     <CountryInfo /> 
   </React.StrictMode>,
   document.getElementById("root")
 );
