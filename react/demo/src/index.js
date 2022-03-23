@@ -1,12 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import CountryInfo from "./ajax/CountryInfo";
+import Books from "./books/Books";
+// import CountryInfo from "./ajax/CountryInfo";
 import "./index.css";
  
 
 ReactDOM.render( 
   <React.StrictMode>
-     <CountryInfo /> 
+     <Books />
   </React.StrictMode>,
   document.getElementById("root")
 );
