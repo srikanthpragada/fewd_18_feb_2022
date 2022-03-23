@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import $ from 'jquery'
-// import BOOKS_URL from './constants'
+import {BOOKS_URL} from './constants'
 
 
 import { Link } from "react-router-dom";
@@ -14,7 +14,7 @@ export default function ListBooks() {
     )
 
     function getBooks() {
-        $.get("http://localhost:8000/books",
+        $.get(BOOKS_URL,
             (result) => {
                 setBooks(result)
             }
@@ -23,7 +23,7 @@ export default function ListBooks() {
     function deleteBook(id) {
         $.ajax(
             {
-                url: `http://localhost:8000/books/${id}`,
+                url: `${BOOKS_URL}/${id}`,
                 method: 'delete',
                 success: function () {
                     alert("Book deleted successfully!")

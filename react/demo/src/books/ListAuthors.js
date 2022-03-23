@@ -1,14 +1,12 @@
-
-
 import React, { useState, useEffect } from 'react'
 import $ from 'jquery'
-
+import { AUTHORS_URL } from './constants'
 
 export default function ListAuthors() {
     const [authors, setAuthors] = useState([])
 
     useEffect(() => {
-        $.get("http://localhost:8000/authors",
+        $.get(AUTHORS_URL,
             (result) => {
                 setAuthors(result)
             }
