@@ -21,7 +21,7 @@ export default function ListAuthors() {
             <div className="row">
                 {authors.map((author) =>
                     <div key={author.id} className="col border bg-light m-3" >
-                        <div className="p-3 ">
+                        <div className="p-3 text-center">
                             <h3> {author.name} </h3>
                             <h4> {author.email}</h4>
                         </div>

@@ -29,6 +29,18 @@
       "price": "874",
       "author": "Gavin de Becker",
       "id": 6
+    },
+    {
+      "title": "New Book",
+      "author": "New Author",
+      "price": "393",
+      "id": 7
+    },
+    {
+      "title": "Another Book",
+      "author": "New Author",
+      "price": "987",
+      "id": 8
     }
   ],
   "authors": [

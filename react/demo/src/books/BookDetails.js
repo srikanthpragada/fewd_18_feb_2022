@@ -1,15 +1,16 @@
 import React, { useState, useEffect } from 'react'
 import $ from 'jquery'
 import { useParams } from "react-router-dom";
+import { BOOKS_URL } from './constants';
 
 export default function BookDetails() {
-    let { id } = useParams();
+    let { bookId } = useParams();
     const [book, setBook] = useState({ title : "", author : "", price : ""})
 
     useEffect(() => {
-        $.get(`http://localhost:8000/books/${id}`,
-            (result) => {
-                setBook(result)
+        $.get(`${BOOKS_URL}/${bookId}`,
+            (book) => {
+                setBook(book)
             }
         ) // get
     }, []
