@@ -4,7 +4,7 @@ import AddBook from "./AddBook"
 import BookDetails from "./BookDetails"
 import ListAuthors from './ListAuthors'
 import SearchBooks from './SearchBooks'
- 
+
 import {
     BrowserRouter,
     Routes,
@@ -15,24 +15,24 @@ import {
 
 export default function Books() {
     return (
-        <BrowserRouter>
+        <BrowserRouter basename="/books">
             <Routes>
                 <Route path="/" element={<Layout />}>
                     <Route index element={<ListBooks />} />
-                    <Route path="list" element={<ListBooks/>} />
+                    <Route path="list" element={<ListBooks />} />
                     <Route path="addbook" element={<AddBook />} />
                     <Route path="authors" element={<ListAuthors />} />
                     <Route path="search" element={<SearchBooks />} />
                     <Route path="details/:bookId" element={<BookDetails />} />
-                    <Route path="*" element= {
-                         <h3>Sorry! Page Not Found!!!</h3>
+                    <Route path="*" element={
+                        <h3>Sorry! Page Not Found!!!</h3>
                     } />
                 </Route>
             </Routes>
         </BrowserRouter>
     );
 }
- 
+
 
 function Layout() {
     return (
@@ -44,10 +44,10 @@ function Layout() {
                 <Link className="nav-link text-white" to="/authors">Authors</Link>
                 <Link className="nav-link text-white" to="/addbook">Add Book</Link>
             </nav>
-           
+
             <p></p>
             <Outlet />
-           
+
         </div>
     )
 }
